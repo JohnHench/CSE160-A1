@@ -25,6 +25,7 @@ let u_FragColor;
 let u_Size;
 let g_numSegments = 10;
 
+// Slider for segments on cirlce
 function updateNumSegments() {
     let slider = document.getElementById('segmentSlider');
     g_numSegments = parseInt(slider.value);
@@ -99,7 +100,10 @@ function addActionsForHtmlUI() {
     document.getElementById('redSlide').addEventListener('mouseup',   function() { g_selectedColor[0] = this.value/100; });
     document.getElementById('greenSlide').addEventListener('mouseup', function() { g_selectedColor[1] = this.value/100; });
     document.getElementById('blueSlide').addEventListener('mouseup',  function() { g_selectedColor[2] = this.value/100; });
+
+    // Segment Slider Event
     document.getElementById('segmentSlider').addEventListener('input', updateNumSegments);
+
     // Size Slider Events
     document.getElementById('sizeSlide').addEventListener('mouseup',  function() { g_selectedSize = this.value; });
 
