@@ -1,3 +1,4 @@
+// Point.js
 class Point {
 
     // Constructor

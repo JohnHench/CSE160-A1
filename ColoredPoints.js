@@ -1,4 +1,4 @@
-// ColoredPoint.js (c) 2012 matsuda
+// ColoredPoint.js 
 // Vertex shader program
 var VSHADER_SOURCE = `
   attribute vec4 a_Position;
@@ -85,6 +85,8 @@ const CIRCLE = 2;
 let g_selectedColor = [1.0, 1.0, 1.0, 1.0];
 let g_selectedSize = 5;
 let g_selectedType = POINT;
+
+
 // Set up actions for the HTML UI elements
 function addActionsForHtmlUI() {
     
@@ -101,6 +103,9 @@ function addActionsForHtmlUI() {
     document.getElementById('greenSlide').addEventListener('mouseup', function() { g_selectedColor[1] = this.value/100; });
     document.getElementById('blueSlide').addEventListener('mouseup',  function() { g_selectedColor[2] = this.value/100; });
 
+    // Transparency Slider Event
+    document.getElementById('alphaSlide').addEventListener('mouseup',  function() { g_selectedColor[3] = this.value/100; });
+    
     // Segment Slider Event
     document.getElementById('segmentSlider').addEventListener('input', updateNumSegments);
 
