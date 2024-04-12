@@ -101,14 +101,16 @@ function addActionsForHtmlUI() {
     document.getElementById('red').onclick   = function() { g_selectedColor = [1.0, 0.0, 0.0, 1.0]; };
     document.getElementById('clearButton').onclick   = function() {g_shapesList = []; renderAllShapes(); };
 
+    // Shape Events
     document.getElementById('pointButton').onclick   = function() {g_selectedType = POINT};
     document.getElementById('triangleButton').onclick   = function() {g_selectedType = TRIANGLE};    
     document.getElementById('circleButton').onclick   = function() {g_selectedType = CIRCLE}; 
     document.getElementById('diamondButton').onclick   = function() {g_selectedType = DIAMOND}; 
-    // document.getElementById('starButton').onclick   = function() {g_selectedType = STAR}; 
-    //document.getElementById('heartButton').onclick   = function() {g_selectedType = HEART};
     document.getElementById('weird1Button').onclick   = function() {g_selectedType = WEIRD1};  
     document.getElementById('weird2Button').onclick   = function() {g_selectedType = WEIRD2};  
+    // document.getElementById('starButton').onclick   = function() {g_selectedType = STAR}; 
+    // document.getElementById('heartButton').onclick   = function() {g_selectedType = HEART};   
+
     // Color Slider Events
     document.getElementById('redSlide').addEventListener('mouseup',   function() { g_selectedColor[0] = this.value/100; });
     document.getElementById('greenSlide').addEventListener('mouseup', function() { g_selectedColor[1] = this.value/100; });
@@ -239,8 +241,8 @@ function renderAllShapes() {
         g_shapesList[i].render();
     }
 
-    var duration = performance.now() - startTime;
-    sendTextToHTML("numdot: " + len + " ms: " + Math.floor(duration) + " fps: " + Math.floor(10000/duration)/10, "numdot");
+    // var duration = performance.now() - startTime;
+    // sendTextToHTML("numdot: " + len + " ms: " + Math.floor(duration) + " fps: " + Math.floor(10000/duration)/10, "numdot");
 
         // var xy = g_shapesList[i].position;
         // var rgba = g_shapesList[i].color;
@@ -263,11 +265,11 @@ function renderAllShapes() {
 
 }
 
-function sendTextToHTML(text, htmlID) {
-    var htlmElm = document.getElementById(htlmID);
-    if (!htmlElm) {
-        console.log("Failed to get " + htmlID + " from HTML");
-        return;
-    }
-    htmlElm.innerHTML = text;
-}
+// function sendTextToHTML(text, htmlID) {
+//     var htlmElm = document.getElementById(htlmID);
+//     if (!htmlElm) {
+//         console.log("Failed to get " + htmlID + " from HTML");
+//         return;
+//     }
+//     htmlElm.innerHTML = text;
+// }

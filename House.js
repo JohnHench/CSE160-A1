@@ -1,7 +1,7 @@
 function renderHouse() {
     gl.clear(gl.COLOR_BUFFER_BIT);
 
-    // Define vertices for the background (sky) and ground (grass)
+    // Define vertices for the background (sky) and ground (grass) (painfully plotted the matrix for perfection lmfao)
     const vertices = [
         // Sky
         -1.0, 1.0,
